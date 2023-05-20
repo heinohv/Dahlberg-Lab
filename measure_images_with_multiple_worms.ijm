@@ -55,8 +55,8 @@ while (continue_loop>0) {
 	getStatistics(area, mean, min, max, std, histogram);
 	background_mean_signal = mean;
 	Table.set("mean background signal", table_index, background_mean_signal);
-	norm_worm_signal = (worm_signal)-(worm_area*background_mean_signal);
-	Table.set("norm worm signal", table_index, norm_worm_signal);
+	worm_signal_minus_background = (worm_signal)-(worm_area*background_mean_signal);
+	Table.set("worm signal minus background", table_index, worm_signal_minus_background);
 	
 	table_index += 1;
 	Stack.setChannel(dic_channel)
