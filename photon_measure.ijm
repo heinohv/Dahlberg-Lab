@@ -1,32 +1,20 @@
-// Initialize a counter variable to keep track of the number of images opened
 counter = 0;
 
 dir = getDirectory("Choose a Directory");
     
- // Call the function to process the directory and its subdirectories
+// Call the function to process the directory and its subdirectories
 processDirectory(dir);
     
-
-
 // Function to process a directory and its subdirectories
 function processDirectory(directory) {
-    // Get a list of all files and subdirectories in the current directory
     list = getFileList(directory);
-    
-    // Loop through the list of files and subdirectories
     for (i = 0; i < list.length; i++) {
         item = directory + list[i];
-        
-        // Check if the item is a directory
         if (File.isDirectory(item)) {
-            // Recursively process the subdirectory
             processDirectory(item + "/");
         } else {
-            // Check if the item is an image (customize the image extensions as needed)
             if (endsWith(list[i], ".tif") || endsWith(list[i], ".jpg") || endsWith(list[i], ".png")) {
-                // Open the image
                 open(item);
-                // Increment the counter
                 print(counter);
 				split_and_mask();
 				counter++;
@@ -78,8 +66,6 @@ function split_and_mask() {
 	imageCalculator("Subtract create stack", photon_image, cuticle_mask);
 	no_cuticle = getTitle();
 	setLocation(0, 512);
-	
-
 	
 	close(neuron_mask);
 	close(cuticle_mask);
