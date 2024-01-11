@@ -79,7 +79,6 @@ for (j = 0; j < lengthOf(filelist); j++) {
 		continue_loop = getNumber("Change value to 0 once you have measured all worms", 1);	
 		if (continue_loop==0) {
 			close(file_name);
-			print("A");
 			}
 	}
 }

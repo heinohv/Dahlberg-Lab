@@ -6,7 +6,6 @@ for (i = 1; i < nImages+1; i++) {
 	Property.set("CompositeProjection", "null");
 	Stack.setDisplayMode("grayscale");
 	title=getTitle();
-	print(title);
 	saveAs("Tiff", output_dir+title);
 }
 
